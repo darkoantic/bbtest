@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Backbone</title>
+    <script src="jquery-1.11.1.js"></script>
+    <script src="underscore.js"></script>
+    <script src="backbone.js"></script>
+    
+    
+    <script>
+        var ProvisionSettings = Backbone.Model.extend();
+        var ProvisionSettingsList = Backbone.Collection.extend({
+            model: ProvisionSettings,
+            url: 'settings.json'
+        });
+        
+        
+        
+        var provisions = new ProvisionSettingsList(); 
+        provisions.fetch();
+        console.log(provisions);
+        provisions.bind('load', function () { console.log(provisions); });        
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+</html>
